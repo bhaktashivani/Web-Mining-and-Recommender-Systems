@@ -1,0 +1,22 @@
+# Approaches for Assignment 1 Tasks:
+
+For both the tasks I tried multiple aprproaches. The first is the one that was submitted and others are the once implemented but didn't give good results. 
+
+### Read Task:
+1. Like homework, I not only used the 'popularity' with optimized threshold, I used the Jaccard similarity. Given a pair (u, b) in the validation set, I considered all training items b′ that user u has read. For each, computed the Jaccard similarity between b and b′, i.e., users (in the training set) who have read b and users who have read b′. which, then is used to predict as ‘read’ if the maximum of these Jaccard similarities exceeds a threshold with the popularity threshold. This code was optimized using different thresholds. 
+
+2. Along with Jaccard Similarity in #1, I also tried cosine similarity, with different combination of both together with popularity parameters, as well as invidually alone and popularity. None, of these gave any better results than #1. 
+
+3. I tried creating my own feature vectors, using the similarities among the users, books, and the rating they gave to mutal books among them, and used SVD for prediction. Again, this didn't give any better results than #1. 
+
+
+
+### Rating task:
+
+1. Similiar to HW3, I used the Simple (bias only) latent factor-based recommender. I used regularization parameter lambda. The final results are generated using lambda = 1e-5. This lamba was fined tuned to get the minimum possible MSE.  
+
+2. Another approached I had tried was adding the userGamma and itemGamma with the bias terms, however, this save worse results for various lambdas compared to #1. 
+ 
+
+
+
